@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import './index.css'
+import './index.css';
 
 function Greeting() {
   const Image = () => {
@@ -14,7 +14,7 @@ function Greeting() {
   };
 
   const Author = () => {
-    return <h2>Michelle Obama</h2>
+    return <h2 style={{fontSize: "18px", marginTop: '0.25rem'}}>Michelle Obama</h2>
   }
   
   const Book = () => {

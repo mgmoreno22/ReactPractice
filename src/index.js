@@ -2,14 +2,22 @@ import React from "react";
 import ReactDom from "react-dom";
 import "./index.css";
 
-function Greeting() {
-  const Book = () => {
+//setup vars
+const firstBook = {
+  imgSrc: "https://images-na.ssl-images-amazon.com/images/I/81h2gWPTYJL._AC_UL200_SR200,200_.jpg",
+  altTxt: "Becoming Book Cover",
+  title: "Becoming",
+  author: "Michelle Obama"
+}
+
+function BookList() {
+  const Book = (props) => {
     return (
       <article className="book">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/81h2gWPTYJL._AC_UL200_SR200,200_.jpg"></img>
-        <h1>Becoming</h1>
-        <h2 style={{ fontSize: "18px", marginTop: "0.25rem" }}>
-          Michelle Obama
+        <img src={props.imgSrc} alt={props.altTxt}></img>
+        <h1>{props.title}</h1>
+        <h2 style={{ fontSize: "16px", marginTop: "0.25rem" }}>
+          {props.author.toUpperCase()}
         </h2>
       </article>
     );
@@ -17,7 +25,7 @@ function Greeting() {
 
   return (
     <section className="booklist">
-      <Book />
+      <Book firstBook />
       <Book />
       <Book />
       <Book />
@@ -27,4 +35,4 @@ function Greeting() {
   );
 }
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+ReactDom.render(<BookList />, document.getElementById("root"));
